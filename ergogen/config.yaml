@@ -1,9 +1,9 @@
 units:
-    kcs: 16.6 # Key Cap Size (of a square choc v1 keycap)
-    cos: 14 # Cut Out Size, switch insert footprint in fr4
-    cx: 18
-    cy: 17
-    vertical_underglow_shift: -10 # How much to shift underglow leds tied to keys
+  kcs: 16.6 # Key Cap Size (of a square choc v1 keycap)
+  cos: 14 # Cut Out Size, switch insert footprint in fr4
+  cx: 18
+  cy: 17
+  vertical_underglow_shift: -10 # How much to shift underglow leds tied to keys
 
 points:
   key:
@@ -238,18 +238,18 @@ pcbs.left:
         shift: [8, 4.4]
         rotate: 90
     backlight_leds:
-        what: led_sk6812mini-e
-        where: switch
-        params:
-          P1: VCC
-          P2: "{{key.led_next}}" #DOUT
-          P3: GND
-          P4: "{{key.led_prev}}" #DIN
-          reversible: false
-          reverse_mount: true
-        adjust:
-          shift: [0, 4.7]
-          rotate: 0
+      what: led_sk6812mini-e
+      where: switch
+      params:
+        P1: VCC
+        P2: "{{key.led_next}}" #DOUT
+        P3: GND
+        P4: "{{key.led_prev}}" #DIN
+        reversible: false
+        reverse_mount: true
+      adjust:
+        shift: [0, 4.7]
+        rotate: 0
     underglow_leds:
       what: ws2812b
       where: [underglow]
@@ -266,7 +266,19 @@ pcbs.left:
         rotate: -90
     bat_con:
       what: battery_connector_jst_ph_2
-    pwr_sw:
-      what: power_switch_smd_side
+      adjust:
+        ref: matrix_inner_top
+        shift: [11, -27]
+        rotate: 90
     rst_bt:
       what: reset_switch_smd_side
+      adjust:
+        ref: matrix_inner_top
+        shift: [28, -27]
+        rotate: -90
+    pwr_sw:
+      what: power_switch_smd_side
+      adjust:
+        ref: matrix_inner_top
+        shift: [19.5, 8.1]
+        rotate: 90
