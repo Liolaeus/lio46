@@ -51,7 +51,7 @@
 //      or above 0.8 (KiCad default), to avoid overlap or DRC errors
 //    via_drill: default is 0.4
 //      allows to define the size of the drill. Not recommended below 0.3 (JLCPCB minimum),
-//      or above 0.4 (KiCad default), to avoid overlap or DRC errors 
+//      or above 0.4 (KiCad default), to avoid overlap or DRC errors
 //    include_courtyard: default is true
 //      if true it will include the part courtyard
 //    include_keepout: default is false
@@ -95,7 +95,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `
-  (footprint "ceoloide:led_SK6812mini-e (${p.reverse_mount ? "per-key" : "underglow"}${p.reversible ? ", reversible" : "single-side"})" 
+  (footprint "ceoloide:led_SK6812mini-e (${p.reverse_mount ? "per-key" : "underglow"}${p.reversible ? ", reversible" : "single-side"})"
     (layer "${p.side}.Cu")
     ${p.at}
     (property "Reference" "${p.ref}"
@@ -168,7 +168,6 @@ module.exports = {
     (fp_rect (start -1.8 -1.55) (end 1.8 1.55) (layer "Edge.Cuts") (stroke (width 0.12) (type solid)) (fill none))
   )
     `
-
     const traces_vias_reversed = `
   ${'' /* VCC Trace */}
   (segment (start ${p.eaxy(3.4, -0.7)}) (end ${p.eaxy(4.06, -0.105916)}) (width ${p.vcc_trace_width}) (layer "F.Cu") (net ${p.P1.index}))

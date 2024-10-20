@@ -11,6 +11,8 @@ points:
     spread: kcs + 1.4
   zones:
     matrix:
+      anchor:
+        shift: [50, -200] # position on kicad sheet
       key:
         tags:
           - switch
@@ -36,23 +38,12 @@ points:
         inner:
           rows.bonus.skip: true
           key.stagger: -4
-        bonus:
-          rows.bonus.skip: true
-          key:
-            skip: true
-            stagger: -2.8
-          rows:
-            bottom.skip: false
-    thumb:
-      key:
-        tags:
-          - switch
+    thumbfan:
       rows:
         thumb:
       anchor:
         ref: matrix_inner_bottom
         shift: [-28, -18]
-
       columns:
         inner:
         close:
@@ -73,8 +64,7 @@ points:
         dout: ULED_1
       anchor:
         - ref: matrix_inner_top
-          shift: [0, vertical_underglow_shift]
-
+          shift: [-9, -9.5]
     underglow_led_2:
       key:
         tags:
@@ -83,8 +73,7 @@ points:
         dout: ULED_2
       anchor:
         - ref: matrix_middle_top
-          shift: [0, vertical_underglow_shift]
-
+          shift: [-9, -9.5]
     underglow_led_3:
       key:
         tags:
@@ -93,8 +82,7 @@ points:
         dout: ULED_3
       anchor:
         - ref: matrix_pinky_top
-          shift: [0, vertical_underglow_shift]
-
+          shift: [-9, -9.5]
     underglow_led_4:
       key:
         tags:
@@ -103,8 +91,7 @@ points:
         dout: ULED_4
       anchor:
         - ref: matrix_pinky_home
-          shift: [0, vertical_underglow_shift]
-
+          shift: [-9, -12.5]
     underglow_led_5:
       key:
         tags:
@@ -113,8 +100,7 @@ points:
         dout: ULED_5
       anchor:
         - ref: matrix_middle_bottom
-          shift: [0, vertical_underglow_shift]
-
+          shift: [-9, -12.5]
     underglow_led_6:
       key:
         tags:
@@ -123,7 +109,35 @@ points:
         dout: ULED_6
       anchor:
         - ref: matrix_inner_bottom
-          shift: [0, vertical_underglow_shift]
+          shift: [-9, -9.2]
+    mounting_hole_1:
+      anchor:
+        - ref: matrix_inner_top
+          shift: [-9, 2]
+    mounting_hole_2:
+      anchor:
+        - ref: matrix_pinky_top
+          shift: [-9, -2]
+    mounting_hole_3:
+      anchor:
+        - ref: matrix_pinky_bottom
+          shift: [-8.8, -10]
+    mounting_hole_4:
+      anchor:
+        - ref: thumbfan_inner_thumb
+          shift: [9, 11]
+    mounting_hole_5:
+      anchor:
+        - ref: matrix_inner_top
+          shift: [kcs + 8, -48]
+    logo:
+      anchor:
+        - ref: matrix_inner_top
+          shift: [kcs + 8, -48]
+
+  mirror:
+    ref: matrix_inner_home
+    distance: 100
 
 outlines:
   cutouts:
@@ -142,69 +156,99 @@ outlines:
       adjust:
         ref: matrix_inner_top
         shift: [kcs + 2, -8.2]
-  pcb:
+  pcb_left:
     - what: polygon
       operation: stack
       fillet: 1.5
       points:
         - ref: matrix_outer_bottom
           shift: [50, -0.6kcs]
-
         - ref: matrix_outer_bottom
           shift: [-0.6kcs, -0.6kcs]
-
         - ref: matrix_outer_top
           shift: [-0.6kcs, 0.6kcs]
-
         - ref: matrix_outer_top
           shift: [8, 0.6kcs]
-
         - ref: matrix_pinky_top
           shift: [-10, 0.6kcs]
-
         - ref: matrix_pinky_top
           shift: [8, 0.6kcs]
-
         - ref: matrix_ring_top
           shift: [-10, 0.6kcs]
-
         - ref: matrix_ring_top
           shift: [8, 0.6kcs]
-
         - ref: matrix_middle_top
           shift: [-10, 0.6kcs]
-
         - ref: matrix_middle_top
           shift: [10, 0.6kcs]
-
         - ref: matrix_index_top
           shift: [-8, 0.6kcs]
-
         - ref: matrix_index_top
           shift: [10, 0.6kcs]
-
         - ref: matrix_inner_top
           shift: [-8, 0.6kcs]
-
         - ref: matrix_inner_top
           shift: [1.8kcs, 0.6kcs]
-
         - ref: matrix_inner_top
           shift: [1.8kcs, -3kcs]
-
-        - ref: thumb_outer_thumb
+        - ref: thumbfan_outer_thumb
           shift: [0.6kcs, 0.6kcs]
-        - ref: thumb_outer_thumb
+        - ref: thumbfan_outer_thumb
           shift: [0.6kcs, -0.6kcs]
-        - ref: thumb_home_thumb
+        - ref: thumbfan_home_thumb
           shift: [0.5kcs, -0.6kcs]
-        - ref: thumb_home_thumb
+        - ref: thumbfan_home_thumb
           shift: [-0.5kcs, -0.6kcs]
-        - ref: thumb_inner_thumb
+        - ref: thumbfan_inner_thumb
+          shift: [-0.6kcs, -0.6kcs]
+  pcb_right:
+    - what: polygon
+      operation: stack
+      fillet: 1.5
+      points:
+        - ref: mirror_matrix_outer_bottom
+          shift: [50, -0.6kcs]
+        - ref: mirror_matrix_outer_bottom
+          shift: [-0.6kcs, -0.6kcs]
+        - ref: mirror_matrix_outer_top
+          shift: [-0.6kcs, 0.6kcs]
+        - ref: mirror_matrix_outer_top
+          shift: [8, 0.6kcs]
+        - ref: mirror_matrix_pinky_top
+          shift: [-10, 0.6kcs]
+        - ref: mirror_matrix_pinky_top
+          shift: [8, 0.6kcs]
+        - ref: mirror_matrix_ring_top
+          shift: [-10, 0.6kcs]
+        - ref: mirror_matrix_ring_top
+          shift: [8, 0.6kcs]
+        - ref: mirror_matrix_middle_top
+          shift: [-10, 0.6kcs]
+        - ref: mirror_matrix_middle_top
+          shift: [10, 0.6kcs]
+        - ref: mirror_matrix_index_top
+          shift: [-8, 0.6kcs]
+        - ref: mirror_matrix_index_top
+          shift: [10, 0.6kcs]
+        - ref: mirror_matrix_inner_top
+          shift: [-8, 0.6kcs]
+        - ref: mirror_matrix_inner_top
+          shift: [1.8kcs, 0.6kcs]
+        - ref: mirror_matrix_inner_top
+          shift: [1.8kcs, -3kcs]
+        - ref: mirror_thumbfan_outer_thumb
+          shift: [0.6kcs, 0.6kcs]
+        - ref: mirror_thumbfan_outer_thumb
+          shift: [0.6kcs, -0.6kcs]
+        - ref: mirror_thumbfan_home_thumb
+          shift: [0.5kcs, -0.6kcs]
+        - ref: mirror_thumbfan_home_thumb
+          shift: [-0.5kcs, -0.6kcs]
+        - ref: mirror_thumbfan_inner_thumb
           shift: [-0.6kcs, -0.6kcs]
   combo:
     - operation: stack
-      name: pcb
+      name: pcb_left
     - operation: stack
       name: cutouts
     - operation: stack
@@ -212,73 +256,211 @@ outlines:
     - operation: stack
       name: controller
 
-pcbs.left:
-  outlines:
-    main:
-      outline: pcb
-  footprints:
-    switches:
-      what: choc
-      where: switch
-      params:
-        reverse: false
-        keycaps: true
-        hotswap: true
-        from: "{{col_net}}"
-        to: "{{colrow}}"
-      adjust:
-        rotate: 180
-    diodes:
-      what: diode_tht_sod123
-      where: switch
-      params:
-        from: "{{colrowt}}"
-        to: "{{row_net}}"
-      adjust:
-        shift: [8, 4.4]
-        rotate: 90
-    backlight_leds:
-      what: led_sk6812mini-e
-      where: switch
-      params:
-        P1: VCC
-        P2: "{{key.led_next}}" #DOUT
-        P3: GND
-        P4: "{{key.led_prev}}" #DIN
-        reversible: false
-        reverse_mount: true
-      adjust:
-        shift: [0, 4.7]
-        rotate: 0
-    underglow_leds:
-      what: ws2812b
-      where: [underglow]
-      params:
-        side: B
-        VCC: "{{VCC}}"
-        din: "{{din}}"
-        dout: "{{dout}}"
-    controller:
-      what: nicenano
-      adjust:
-        ref: matrix_inner_top
-        shift: [kcs + 3, -8.2]
-        rotate: -90
-    bat_con:
-      what: battery_connector_jst_ph_2
-      adjust:
-        ref: matrix_inner_top
-        shift: [11, -27]
-        rotate: 90
-    rst_bt:
-      what: reset_switch_smd_side
-      adjust:
-        ref: matrix_inner_top
-        shift: [28, -27]
-        rotate: -90
-    pwr_sw:
-      what: power_switch_smd_side
-      adjust:
-        ref: matrix_inner_top
-        shift: [19.5, 8.1]
-        rotate: 90
+pcbs:
+  left:
+    outlines:
+      main:
+        outline: pcb_left
+    footprints:
+      switches:
+        what: choc
+        where: /(^matrix_.*)|(^thumbfan.*)/
+        params:
+          reverse: false
+          keycaps: true
+          hotswap: true
+          from: "{{col_net}}"
+          to: "{{colrow}}"
+        adjust:
+          rotate: 180
+      diodes:
+        what: diode_tht_sod123
+        where: /^matrix_(?!(?:index_home)).*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [8, 4.4]
+          rotate: 90
+      thumb_diodes:
+        what: diode_tht_sod123
+        where: /^thumbfan.*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [-8, 4.4]
+          rotate: 90
+      diode_conflict:
+        what: diode_tht_sod123
+        where: matrix_index_home
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [4.4, 4.4]
+          rotate: 90
+      backlight_leds:
+        what: led_sk6812mini-e
+        where: /(^matrix_.*)|(^thumbfan.*)/
+        params:
+          P1: VCC
+          P2: "{{key.led_next}}" #DOUT
+          P3: GND
+          P4: "{{key.led_prev}}" #DIN
+          reversible: false
+          reverse_mount: true
+        adjust:
+          shift: [0, 4.7]
+          rotate: 0
+      underglow_leds:
+        what: ws2812b
+        where: /^underglow_.*/
+        params:
+          side: B
+          VCC: "{{VCC}}"
+          din: "{{din}}"
+          dout: "{{dout}}"
+      controller:
+        what: nicenano
+        adjust:
+          ref: matrix_inner_top
+          shift: [kcs + 3, -8.2]
+          rotate: -90
+      bat_con:
+        what: battery_connector_jst_ph_2
+        adjust:
+          ref: matrix_inner_top
+          shift: [11, -30]
+          rotate: 90
+      pwr_sw:
+        what: power_switch_smd_side
+        adjust:
+          ref: matrix_inner_top
+          shift: [28, -32]
+      rst_bt:
+        what: reset_switch_smd_side
+        adjust:
+          ref: matrix_inner_top
+          shift: [28, -42]
+          rotate: -90
+      nice_view:
+        what: niceview
+        params:
+          SDA: P017
+          SCL: P020
+          CS: P006
+        where:
+          ref: matrix_inner_top
+          shift: [kcs + 3, -26.4]
+          rotate: 90
+      mounting_holes:
+        what: mounting_hole_plated
+        where: /^mounting_hole_.*/
+      # logo:
+      #   what: lio_logo
+      #   where: logo
+  right:
+    outlines:
+      main:
+        outline: pcb_right
+    footprints:
+      switches:
+        what: choc
+        where: /(^mirror_matrix_.*)|(^mirror_thumbfan.*)/
+        params:
+          reverse: false
+          keycaps: true
+          hotswap: true
+          from: "{{col_net}}"
+          to: "{{colrow}}"
+        adjust:
+          rotate: 180
+      diodes:
+        what: diode_tht_sod123
+        where: /^mirror_matrix_(?!(?:index_home)).*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [8, 4.4]
+          rotate: 90
+      thumb_diodes:
+        what: diode_tht_sod123
+        where: /^mirror_thumbfan.*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [-8, 4.4]
+          rotate: 90
+      diode_conflict:
+        what: diode_tht_sod123
+        where: mirror_matrix_index_home
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [4.4, 4.4]
+          rotate: 90
+      backlight_leds:
+        what: led_sk6812mini-e
+        where: /(^mirror_matrix_.*)|(^mirror_thumbfan.*)/
+        params:
+          P1: VCC
+          P2: "{{key.led_next}}" #DOUT
+          P3: GND
+          P4: "{{key.led_prev}}" #DIN
+          reversible: false
+          reverse_mount: true
+        adjust:
+          shift: [0, 4.7]
+          rotate: 0
+      underglow_leds:
+        what: ws2812b
+        where: /^mirror_underglow_.*/
+        params:
+          side: B
+          VCC: "{{VCC}}"
+          din: "{{din}}"
+          dout: "{{dout}}"
+      controller:
+        what: nicenano
+        adjust:
+          ref: mirror_matrix_inner_top
+          shift: [kcs + 3, -8.2]
+          rotate: 90
+      bat_con:
+        what: battery_connector_jst_ph_2
+        adjust:
+          ref: mirror_matrix_inner_top
+          shift: [11, -30]
+          rotate: 90
+      pwr_sw:
+        what: power_switch_smd_side
+        adjust:
+          ref: mirror_matrix_inner_top
+          shift: [28, -32]
+          rotate: 180
+      rst_bt:
+        what: reset_switch_smd_side
+        adjust:
+          ref: mirror_matrix_inner_top
+          shift: [28, -42]
+          rotate: -90
+      nice_view:
+        what: niceview
+        params:
+          SDA: P017
+          SCL: P020
+          CS: P006
+        where:
+          ref: mirror_matrix_inner_top
+          shift: [kcs + 3, -26.4]
+          rotate: -90
+      mounting_holes:
+        what: mounting_hole_plated
+        where: /^mirror_mounting_hole_.*/
+      # logo:
+      #   what: lio_logo
+      #   where: logo
