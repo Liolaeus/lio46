@@ -357,9 +357,9 @@ pcbs:
       mounting_holes:
         what: mounting_hole_plated
         where: /^mounting_hole_.*/
-      # logo:
-      #   what: lio_logo
-      #   where: logo
+      logo:
+        what: lio_logo
+        where: logo
   right:
     outlines:
       main:
@@ -461,6 +461,6 @@ pcbs:
       mounting_holes:
         what: mounting_hole_plated
         where: /^mirror_mounting_hole_.*/
-      # logo:
-      #   what: lio_logo
-      #   where: logo
+      logo:
+        what: lio_logo
+        where: logo
