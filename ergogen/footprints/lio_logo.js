@@ -9,7 +9,7 @@ module.exports = {
     },
     body: p => {
         const logo = `	(footprint "custom:lio"
-		(layer "F.Cu")
+		(layer "${p.side}.Cu")
 		(uuid "95dfdcd3-6d8c-4920-b73f-19c1c109d475")
 		(at 156.24 173.4)
 		(property "Reference" "G"
@@ -26,7 +26,7 @@ module.exports = {
 		)
 		(property "Value" "Lio"
 			(at 0 7.5 0)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(hide yes)
 			(uuid "450178c9-46ac-446e-9a7a-ef08742df07b")
 			(effects
@@ -38,7 +38,7 @@ module.exports = {
 		)
 		(property "Footprint" "custom:lio"
 			(at 0 0 0)
-			(layer "F.Fab")
+			(layer "${p.side}.Fab")
 			(hide yes)
 			(uuid "7711f1d8-d84f-4aaa-ad87-1e3204163036")
 			(effects
@@ -50,7 +50,7 @@ module.exports = {
 		)
 		(property "Datasheet" ""
 			(at 0 0 0)
-			(layer "F.Fab")
+			(layer "${p.side}.Fab")
 			(hide yes)
 			(uuid "05ce7ffa-9b9b-45b5-8cd1-5b4d72963f60")
 			(effects
@@ -62,7 +62,7 @@ module.exports = {
 		)
 		(property "Description" ""
 			(at 0 0 0)
-			(layer "F.Fab")
+			(layer "${p.side}.Fab")
 			(hide yes)
 			(uuid "50583d09-3beb-466b-953e-482620dba66b")
 			(effects
@@ -83,7 +83,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "104ceb27-a829-4e16-9fff-9d168f1a2d76")
 		)
 		(fp_poly
@@ -97,7 +97,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "29665db7-504a-4523-9a94-d94fcccd6945")
 		)
 		(fp_poly
@@ -111,7 +111,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "998be7e7-f661-455b-bf8a-fe5d60408c29")
 		)
 		(fp_poly
@@ -126,7 +126,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "c6cd8c77-4b3d-4946-afa8-4c02335b5b71")
 		)
 		(fp_poly
@@ -141,7 +141,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "54937856-5b77-4a55-a098-8bcb16faa814")
 		)
 		(fp_poly
@@ -157,7 +157,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "e2c4783e-8d9d-445f-835b-f2aef2c140f1")
 		)
 		(fp_poly
@@ -172,7 +172,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "8f562860-c2fc-4322-b8ff-5634a1a6c65a")
 		)
 		(fp_poly
@@ -188,7 +188,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "5ff08a0c-dceb-4408-8f79-281823d70bb7")
 		)
 		(fp_poly
@@ -204,7 +204,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "77a4ead3-ecbc-4e3b-a10f-515dec2e0b86")
 		)
 		(fp_poly
@@ -220,7 +220,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "6fa4e956-9231-46c5-be9a-cfdb0ffa4620")
 		)
 		(fp_poly
@@ -236,7 +236,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "11c4beb9-da11-4c4c-8e32-a5acbaa03d17")
 		)
 		(fp_poly
@@ -253,7 +253,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "ea5fa394-3eb7-4da3-8e30-01895bf179d9")
 		)
 		(fp_poly
@@ -269,7 +269,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "ff09100f-1da6-42f7-abe9-3bf33805d21d")
 		)
 		(fp_poly
@@ -285,7 +285,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "5dcd04c2-d5ad-42e6-ae25-3dabca7e1688")
 		)
 		(fp_poly
@@ -302,7 +302,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "cfc5f69a-8424-4693-9b43-4ee1f587ca16")
 		)
 		(fp_poly
@@ -319,7 +319,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "241db2e3-46ee-43ac-9716-d8eab073d3b9")
 		)
 		(fp_poly
@@ -337,7 +337,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "f49bef6d-31a3-4f57-bebb-e5696c77b7ee")
 		)
 		(fp_poly
@@ -354,7 +354,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "d41c3bce-9c0e-4c83-80f0-6399212b1d56")
 		)
 		(fp_poly
@@ -371,7 +371,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "198c091e-2950-46a8-a207-cfb08e574c60")
 		)
 		(fp_poly
@@ -388,7 +388,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "392f739a-d917-47fe-97b4-c5c7acbbe0df")
 		)
 		(fp_poly
@@ -407,7 +407,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "3c8e15df-0bf6-4bb4-9ff0-4076315878e1")
 		)
 		(fp_poly
@@ -424,7 +424,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "524eb0f8-9571-4aff-afc7-a95ed0c4b363")
 		)
 		(fp_poly
@@ -443,7 +443,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "e8e485d0-2e05-49d4-9ad1-62ce0f5cac61")
 		)
 		(fp_poly
@@ -462,7 +462,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "4e7a35e6-61a8-4ce3-8a83-9e7918ed6ea2")
 		)
 		(fp_poly
@@ -482,7 +482,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "13174a20-2a1c-4683-ab4c-022a73addf6b")
 		)
 		(fp_poly
@@ -501,7 +501,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "00d16dc2-c70b-416c-a566-2947c339014b")
 		)
 		(fp_poly
@@ -519,7 +519,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "09f2b974-1f85-4111-85b0-b230f636e332")
 		)
 		(fp_poly
@@ -537,7 +537,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "2e0daa84-f535-4088-abd7-19313f2830fc")
 		)
 		(fp_poly
@@ -557,7 +557,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "43c4ba4b-2cc7-4f4c-b051-54664a4efede")
 		)
 		(fp_poly
@@ -576,7 +576,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "3dbb478d-71e3-4653-848a-3692a1886cf9")
 		)
 		(fp_poly
@@ -595,7 +595,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "85434c8b-566a-49ad-b743-5f0ea865bd81")
 		)
 		(fp_poly
@@ -614,7 +614,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "fc00d8bb-62be-4df1-90cb-1cbc6ca28fcb")
 		)
 		(fp_poly
@@ -633,7 +633,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "6c3e3061-8e9d-4c02-9790-52b23e282cb4")
 		)
 		(fp_poly
@@ -653,7 +653,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "d68dbdbd-7456-4431-abe6-81f8cb8cd4fd")
 		)
 		(fp_poly
@@ -674,7 +674,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "3c2cb61a-b4c7-4ac8-a531-07009b8b431f")
 		)
 		(fp_poly
@@ -694,7 +694,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "84bb074a-df6d-43ff-bdad-f985786c1329")
 		)
 		(fp_poly
@@ -713,7 +713,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "49632e1a-327e-4862-ac76-b9ef80e1c41c")
 		)
 		(fp_poly
@@ -732,7 +732,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "a9b25579-cf8f-4ebd-8989-c1752c450122")
 		)
 		(fp_poly
@@ -752,7 +752,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "083b0d7b-debd-40ea-9fe0-733811e6c308")
 		)
 		(fp_poly
@@ -772,7 +772,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "4d04eb9f-98c9-49bb-8a90-fc49a4b48193")
 		)
 		(fp_poly
@@ -792,7 +792,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "0f159ba6-fa41-4fbf-b86e-308b3e443b0d")
 		)
 		(fp_poly
@@ -813,7 +813,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "3059fe0a-c255-4572-a198-c29c111c143b")
 		)
 		(fp_poly
@@ -836,7 +836,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "f8b5c786-4ac2-472c-bddb-99675fb90edf")
 		)
 		(fp_poly
@@ -857,7 +857,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "c3ccd51f-b907-4388-b2df-98cfda522172")
 		)
 		(fp_poly
@@ -878,7 +878,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "0e574fc2-ae59-46a6-b8b5-d8958e5cdbaf")
 		)
 		(fp_poly
@@ -902,7 +902,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "7af5b595-9958-4fe1-82aa-9e7a366f6fb5")
 		)
 		(fp_poly
@@ -924,7 +924,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "67b78726-5dd8-4fe8-ac62-ccd8752c3513")
 		)
 		(fp_poly
@@ -946,7 +946,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "ded79ceb-11bd-41a8-b3ef-6471842240ce")
 		)
 		(fp_poly
@@ -971,7 +971,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "04f969a7-fe2d-420e-be37-c4adaca6fc74")
 		)
 		(fp_poly
@@ -997,7 +997,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "408b3bef-e3b6-42c8-a5bd-1a32e1ae67fa")
 		)
 		(fp_poly
@@ -1022,7 +1022,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "a66c2389-0033-4c32-affc-2ff5caa06bac")
 		)
 		(fp_poly
@@ -1047,7 +1047,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "9cdf4019-a344-4294-9d72-ae6c166fc063")
 		)
 		(fp_poly
@@ -1072,7 +1072,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "6db7e8f8-6f25-4ae8-9ed2-c3014ccbde58")
 		)
 		(fp_poly
@@ -1101,7 +1101,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "3e15380c-a2c3-4708-84e6-1cea53e96840")
 		)
 		(fp_poly
@@ -1134,7 +1134,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "d55285eb-83db-454d-ba8d-accd24128373")
 		)
 		(fp_poly
@@ -1170,7 +1170,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "58449dae-c0a5-42c8-b625-352ebf866c82")
 		)
 		(fp_poly
@@ -1221,7 +1221,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "b843965b-6189-4cc6-b4db-d631909381ec")
 		)
 		(fp_poly
@@ -1318,7 +1318,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "c27a81e2-8fa5-4a9c-a7ac-6878ef45316e")
 		)
 		(fp_poly
@@ -1438,7 +1438,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "ed35b877-387f-4853-9650-c3f7b7280fb4")
 		)
 		(fp_poly
@@ -1614,7 +1614,7 @@ module.exports = {
 				(type solid)
 			)
 			(fill solid)
-			(layer "F.SilkS")
+			(layer "${p.side}.SilkS")
 			(uuid "e765fa18-f84e-4496-9d65-bebd7cbb207c")
 		)
 	)`

@@ -18,49 +18,153 @@ points:
           - switch
       rows:
         bonus:
+          row_net: P024
         bottom:
+          row_net: P022
         home:
+          row_net: P020
         top:
+          row_net: P017
       columns:
         outer:
-          rows.bonus.skip: true
+          rows:
+            bonus.skip: true
+            top.key:
+              led_prev: LED_20
+              led_next: LED_21
+            home.key:
+              led_prev: LED_21
+              led_next: LED_22
+            bottom.key:
+              led_prev: LED_22
+              led_next: LED_23
+          key:
+            column_net: P031
         pinky:
-          rows.bonus.skip: true
-          key.stagger: 4
+          rows:
+            bonus.skip: true
+            top.key:
+              led_next: LED_20
+              led_prev: LED_19
+            home.key:
+              led_next: LED_19
+              led_prev: LED_18
+            bottom.key:
+              led_next: LED_18
+              led_prev: LED_17
+          key:
+            stagger: 4
+            column_net: P029
         ring:
-          key.stagger: 14
+          rows:
+            top.key:
+              led_prev: LED_13
+              led_next: LED_14
+            home.key:
+              led_prev: LED_14
+              led_next: LED_15
+            bottom.key:
+              led_prev: LED_15
+              led_next: LED_16
+            bonus.key:
+              led_prev: LED_16
+              led_next: LED_17
+          key:
+            stagger: 14
+            column_net: P002
         middle:
-          rows.bonus.skip: true
-          key.stagger: 4
+          rows:
+            bonus.skip: true
+            top.key:
+              led_next: LED_13
+              led_prev: LED_12
+            home.key:
+              led_next: LED_12
+              led_prev: LED_11
+            bottom.key:
+              led_next: LED_11
+              led_prev: LED_10
+          key:
+            stagger: 4
+            column_net: P115
         index:
-          rows.bonus.skip: true
-          key.stagger: -5
+          rows:
+            bonus.skip: true
+            top.key:
+              led_prev: LED_4
+              led_next: LED_5
+            home.key:
+              led_prev: LED_5
+              led_next: LED_6
+            bottom.key:
+              led_prev: LED_6
+              led_next: LED_7
+          key:
+            stagger: -5
+            column_net: P113
         inner:
-          rows.bonus.skip: true
-          key.stagger: -4
+          rows:
+            bonus.skip: true
+            top.key:
+              led_next: LED_4
+              led_prev: LED_3
+            home.key:
+              led_next: LED_3
+              led_prev: LED_2
+            bottom.key:
+              led_next: LED_2
+              led_prev: LED_1
+          key:
+            stagger: -4
+            column_net: P111
     thumbfan:
       rows:
         thumb:
+          row_net: P017
       anchor:
         ref: matrix_inner_bottom
         shift: [-28, -18]
       columns:
         inner:
+          key:
+            column_net: P115
+          rows:
+            thumb.key:
+              led_prev: LED_9
+              led_next: LED_10
         close:
+          key:
+            column_net: P111
+          rows:
+            thumb.key:
+              led_prev: LED_8
+              led_next: LED_9
         home:
-          key.spread: 18
-          key.splay: -15
-          key.origin: [-9, -7]
-
+          key:
+            spread: 18
+            splay: -15
+            origin: [-9, -7]
+            column_net: P113
+          rows:
+            thumb.key:
+              led_prev: LED_7
+              led_next: LED_8
         outer:
-          key.spread: 18
-          key.splay: -15
-          key.origin: [-9, -7]
+          key:
+            spread: 18
+            splay: -15
+            origin: [-9, -7]
+            column_net: P111
+          rows:
+            thumb.key:
+              led_prev: ULED_6
+              led_next: LED_1
+
     underglow_led_1:
       key:
         tags:
           - underglow
-        din: LED
+        din: P006 # LED pin
         dout: ULED_1
       anchor:
         - ref: matrix_inner_top
@@ -73,7 +177,7 @@ points:
         dout: ULED_2
       anchor:
         - ref: matrix_middle_top
-          shift: [-9, -9.5]
+          shift: [-9.7, -12.5]
     underglow_led_3:
       key:
         tags:
@@ -82,7 +186,7 @@ points:
         dout: ULED_3
       anchor:
         - ref: matrix_pinky_top
-          shift: [-9, -9.5]
+          shift: [-9.7, -12.5]
     underglow_led_4:
       key:
         tags:
@@ -113,27 +217,26 @@ points:
     mounting_hole_1:
       anchor:
         - ref: matrix_inner_top
-          shift: [-9, 2]
+          shift: [-9, 4]
     mounting_hole_2:
       anchor:
         - ref: matrix_pinky_top
-          shift: [-9, -2]
+          shift: [-9, 0]
     mounting_hole_3:
       anchor:
         - ref: matrix_pinky_bottom
-          shift: [-8.8, -10]
+          shift: [0, -10]
     mounting_hole_4:
       anchor:
-        - ref: thumbfan_inner_thumb
-          shift: [9, 11]
+        - ref: matrix_middle_bottom
+          shift: [0, -14]
     mounting_hole_5:
       anchor:
         - ref: matrix_inner_top
-          shift: [kcs + 8, -48]
+          shift: [kcs + 3, -46]
     logo:
       anchor:
         - ref: matrix_inner_top
-          shift: [kcs + 8, -48]
 
   mirror:
     ref: matrix_inner_home
@@ -269,13 +372,13 @@ pcbs:
           reverse: false
           keycaps: true
           hotswap: true
-          from: "{{col_net}}"
+          from: "{{column_net}}"
           to: "{{colrow}}"
         adjust:
           rotate: 180
       diodes:
         what: diode_tht_sod123
-        where: /^matrix_(?!(?:index_home)).*/
+        where: /^matrix_(?!(?:index_home|outer_top)).*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
@@ -299,6 +402,15 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [4.4, 4.4]
+          rotate: 90
+      diode_conflict_2:
+        what: diode_tht_sod123
+        where: matrix_outer_top
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [5, 4.4]
           rotate: 90
       backlight_leds:
         what: led_sk6812mini-e
@@ -331,7 +443,7 @@ pcbs:
         what: battery_connector_jst_ph_2
         adjust:
           ref: matrix_inner_top
-          shift: [11, -30]
+          shift: [11, -31]
           rotate: 90
       pwr_sw:
         what: power_switch_smd_side
@@ -345,21 +457,24 @@ pcbs:
           shift: [28, -42]
           rotate: -90
       nice_view:
-        what: niceview
+        what: display_nice_view
         params:
-          SDA: P017
-          SCL: P020
+          MOSI: P017
+          SCK: P020
           CS: P006
         where:
           ref: matrix_inner_top
-          shift: [kcs + 3, -26.4]
-          rotate: 90
+          shift: [kcs + 3, -9.2]
       mounting_holes:
         what: mounting_hole_plated
         where: /^mounting_hole_.*/
       logo:
+        params:
+          side: "B"
         what: lio_logo
-        where: logo
+        where:
+          ref: logo
+          shift: [kcs + 3, -26.4]
   right:
     outlines:
       main:
@@ -372,13 +487,13 @@ pcbs:
           reverse: false
           keycaps: true
           hotswap: true
-          from: "{{col_net}}"
+          from: "{{column_net}}"
           to: "{{colrow}}"
         adjust:
           rotate: 180
       diodes:
         what: diode_tht_sod123
-        where: /^mirror_matrix_(?!(?:index_home)).*/
+        where: /^mirror_matrix_(?!(?:index_home|outer_top)).*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
@@ -402,6 +517,15 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [4.4, 4.4]
+          rotate: 90
+      diode_conflict_2:
+        what: diode_tht_sod123
+        where: mirror_matrix_outer_top
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [5, 4.4]
           rotate: 90
       backlight_leds:
         what: led_sk6812mini-e
@@ -462,5 +586,7 @@ pcbs:
         what: mounting_hole_plated
         where: /^mirror_mounting_hole_.*/
       logo:
+        params:
+          side: "B"
         what: lio_logo
         where: logo
