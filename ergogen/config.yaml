@@ -575,9 +575,9 @@ pcbs:
       nice_view:
         what: niceview
         params:
-          SDA: P017
-          SCL: P020
-          CS: P006
+          SDA: P100
+          SCL: P011
+          CS: P104
         where:
           ref: mirror_matrix_inner_top
           shift: [kcs + 3, -26.4]

@@ -4050,7 +4050,7 @@
   (footprint "ceoloide:display_nice_view"
     (layer F.Cu)
     (at 159.6 142.2 0)
-    (property "Reference" "nice_view_headers"
+    (property "Reference" "DISP1"
       (at 0 20 0)
       (layer "F.SilkS")
       hide
