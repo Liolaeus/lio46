@@ -9,6 +9,10 @@ This program runs pcbnew and imports a Specctra SES file, then saves the result
 as a new KiCad PCB.
 """
 
+def usage():
+    print("import_ses.py -b <board_file> -s <session_file> -o <output_file>")
+    sys.exit(2)
+
 
 def main(argv):
     board_file = ""
@@ -16,19 +20,21 @@ def main(argv):
     session_file = ""
     try:
         opts, args = getopt.getopt(argv, "hb:s:o:", ["board=", "session=", "output="])
+        if len(opts) != 3:
+            usage()
     except getopt.GetoptError:
-        print("import_ses.py -b <board_file> -s <session_file> -o <output_file>")
-        sys.exit(2)
+        usage()
+
     for opt, arg in opts:
         if opt == "-h":
-            print("import_ses.py -b <board_file> -s <session_file> -o <output_file>")
-            sys.exit()
+            usage()
         elif opt in ("-b", "--board"):
             board_file = arg
         elif opt in ("-s", "--session"):
             session_file = arg
         elif opt in ("-o", "--output"):
             output_file = arg
+
     print("Importing Specctra SES ", session_file, " for ", board_file)
     board = pcbnew.LoadBoard(board_file)
     pcbnew.ImportSpecctraSES(board, session_file)
