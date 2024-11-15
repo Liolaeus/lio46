@@ -168,7 +168,7 @@ points:
         dout: ULED_1
       anchor:
         - ref: matrix_inner_top
-          shift: [-9, -9.5]
+          shift: [-9, -8.5]
     underglow_led_2:
       key:
         tags:
@@ -212,20 +212,21 @@ points:
         din: ULED_5
         dout: ULED_6
       anchor:
-        - ref: matrix_inner_bottom
-          shift: [-9, -9.2]
+        - ref: thumbfan_close_thumb
+          shift: [0, 9]
+
     mounting_hole_1:
       anchor:
         - ref: matrix_inner_top
-          shift: [-9, 4]
+          shift: [-9, 6]
     mounting_hole_2:
       anchor:
         - ref: matrix_pinky_top
-          shift: [-9, 0]
+          shift: [9, 6]
     mounting_hole_3:
       anchor:
         - ref: matrix_pinky_bottom
-          shift: [0, -10]
+          shift: [-5, -10]
     mounting_hole_4:
       anchor:
         - ref: matrix_middle_bottom
@@ -237,6 +238,14 @@ points:
     logo:
       anchor:
         - ref: matrix_inner_top
+    nice_view:
+      anchor:
+        - ref: matrix_inner_top
+          shift: [kcs + 3, -9.2]
+    bat_con:
+      anchor:
+        - ref: matrix_inner_top
+          shift: [11, -34]
 
   mirror:
     ref: matrix_inner_home
@@ -378,13 +387,14 @@ pcbs:
           rotate: 180
       diodes:
         what: diode_tht_sod123
-        where: /^matrix_(?!(?:index_home|outer_top)).*/
+        # where: /^matrix_(?!(?:index_home|outer_top)).*/
+        where: /^matrix_*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [8, 4.4]
-          rotate: 90
+          shift: [-8.3, 0.4]
+          rotate: -90
       thumb_diodes:
         what: diode_tht_sod123
         where: /^thumbfan.*/
@@ -392,26 +402,8 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [-8, 4.4]
-          rotate: 90
-      diode_conflict:
-        what: diode_tht_sod123
-        where: matrix_index_home
-        params:
-          from: "{{colrow}}"
-          to: "{{row_net}}"
-        adjust:
-          shift: [4.4, 4.4]
-          rotate: 90
-      diode_conflict_2:
-        what: diode_tht_sod123
-        where: matrix_outer_top
-        params:
-          from: "{{colrow}}"
-          to: "{{row_net}}"
-        adjust:
-          shift: [5, 4.4]
-          rotate: 90
+          shift: [-8.3, 0.4]
+          rotate: -90
       backlight_leds:
         what: led_sk6812mini-e
         where: /(^matrix_.*)|(^thumbfan.*)/
@@ -430,7 +422,6 @@ pcbs:
         where: /^underglow_.*/
         params:
           side: B
-          VCC: "{{VCC}}"
           din: "{{din}}"
           dout: "{{dout}}"
       controller:
@@ -441,9 +432,8 @@ pcbs:
           rotate: -90
       bat_con:
         what: battery_connector_jst_ph_2
+        where: bat_con
         adjust:
-          ref: matrix_inner_top
-          shift: [11, -31]
           rotate: 90
       pwr_sw:
         what: power_switch_smd_side
@@ -458,13 +448,11 @@ pcbs:
           rotate: -90
       nice_view:
         what: display_nice_view
+        where: nice_view
         params:
-          MOSI: P017
-          SCK: P020
-          CS: P006
-        where:
-          ref: matrix_inner_top
-          shift: [kcs + 3, -9.2]
+          CS: P011
+          SCK: P104
+          MOSI: P106
       mounting_holes:
         what: mounting_hole_plated
         where: /^mounting_hole_.*/
@@ -493,12 +481,13 @@ pcbs:
           rotate: 180
       diodes:
         what: diode_tht_sod123
-        where: /^mirror_matrix_(?!(?:index_home|outer_top)).*/
+        where: /^mirror_matrix_(?!(?:index_top)).*/
+        # where: /^mirror_matrix_.*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [8, 4.4]
+          shift: [8.3, 0.4]
           rotate: 90
       thumb_diodes:
         what: diode_tht_sod123
@@ -507,26 +496,17 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [-8, 4.4]
+          shift: [8.3, 0.4]
           rotate: 90
       diode_conflict:
         what: diode_tht_sod123
-        where: mirror_matrix_index_home
+        where: mirror_matrix_index_top
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [4.4, 4.4]
-          rotate: 90
-      diode_conflict_2:
-        what: diode_tht_sod123
-        where: mirror_matrix_outer_top
-        params:
-          from: "{{colrow}}"
-          to: "{{row_net}}"
-        adjust:
-          shift: [5, 4.4]
-          rotate: 90
+          shift: [12, -1.4]
+          rotate: 0
       backlight_leds:
         what: led_sk6812mini-e
         where: /(^mirror_matrix_.*)|(^mirror_thumbfan.*)/
@@ -545,7 +525,6 @@ pcbs:
         where: /^mirror_underglow_.*/
         params:
           side: B
-          VCC: "{{VCC}}"
           din: "{{din}}"
           dout: "{{dout}}"
       controller:
@@ -556,9 +535,8 @@ pcbs:
           rotate: 90
       bat_con:
         what: battery_connector_jst_ph_2
+        where: mirror_bat_con
         adjust:
-          ref: mirror_matrix_inner_top
-          shift: [11, -30]
           rotate: 90
       pwr_sw:
         what: power_switch_smd_side
@@ -573,15 +551,12 @@ pcbs:
           shift: [28, -42]
           rotate: -90
       nice_view:
-        what: niceview
+        what: display_nice_view
+        where: mirror_nice_view
         params:
-          SDA: P100
-          SCL: P011
-          CS: P104
-        where:
-          ref: mirror_matrix_inner_top
-          shift: [kcs + 3, -26.4]
-          rotate: -90
+          CS: P011
+          SCK: P104
+          MOSI: P106
       mounting_holes:
         what: mounting_hole_plated
         where: /^mirror_mounting_hole_.*/
