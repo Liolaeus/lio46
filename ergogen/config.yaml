@@ -12,7 +12,7 @@ points:
   zones:
     matrix:
       anchor:
-        shift: [50, -200] # position on kicad sheet
+        shift: [170, -190] # position on kicad sheet
       key:
         tags:
           - switch
@@ -120,7 +120,7 @@ points:
     thumbfan:
       rows:
         thumb:
-          row_net: P017
+          row_net: P024
       anchor:
         ref: matrix_inner_bottom
         shift: [-28, -18]
@@ -134,7 +134,7 @@ points:
               led_next: LED_10
         close:
           key:
-            column_net: P111
+            column_net: P113
           rows:
             thumb.key:
               led_prev: LED_8
@@ -144,7 +144,7 @@ points:
             spread: 18
             splay: -15
             origin: [-9, -7]
-            column_net: P113
+            column_net: P111
           rows:
             thumb.key:
               led_prev: LED_7
@@ -154,7 +154,7 @@ points:
             spread: 18
             splay: -15
             origin: [-9, -7]
-            column_net: P111
+            column_net: P010
           rows:
             thumb.key:
               led_prev: ULED_6
@@ -235,7 +235,7 @@ points:
       anchor:
         - ref: matrix_inner_top
           shift: [kcs + 3, -46]
-    logo:
+    logo: # will need to be placed manually
       anchor:
         - ref: matrix_inner_top
     nice_view:
@@ -246,10 +246,18 @@ points:
       anchor:
         - ref: matrix_inner_top
           shift: [11, -34]
+    mounting_hole_6:
+      anchor:
+        - ref: nice_view
+          shift: [-7.5, -35]
+    mounting_hole_7:
+      anchor:
+        - ref: nice_view
+          shift: [7.5, -41]
 
   mirror:
     ref: matrix_inner_home
-    distance: 100
+    distance: -100
 
 outlines:
   cutouts:
@@ -273,8 +281,8 @@ outlines:
       operation: stack
       fillet: 1.5
       points:
-        - ref: matrix_outer_bottom
-          shift: [50, -0.6kcs]
+        - ref: matrix_ring_bonus
+          shift: [0, -0.6kcs]
         - ref: matrix_outer_bottom
           shift: [-0.6kcs, -0.6kcs]
         - ref: matrix_outer_top
@@ -312,7 +320,7 @@ outlines:
         - ref: thumbfan_home_thumb
           shift: [-0.5kcs, -0.6kcs]
         - ref: thumbfan_inner_thumb
-          shift: [-0.6kcs, -0.6kcs]
+          shift: [-0.5kcs, -0.6kcs]
   pcb_right:
     - what: polygon
       operation: stack
