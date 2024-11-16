@@ -1,7 +1,7 @@
 # Lio46 keyboard
 `Warning: this is still a work in progress.`
 
-The Lio46 is a wireless, 46 key hot swappable, kailh choc, split keyboard.  
+The Lio46 is a wireless, 46 key hot swappable, kailh choc, rgb backlit and underglow split keyboard.  
 Generated with [ergogen](https://github.com/ergogen/ergogen) and routed with the help of
 [freerouting](https://github.com/freerouting/freerouting)
 
