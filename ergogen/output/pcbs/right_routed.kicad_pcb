@@ -24060,6 +24060,19 @@
 		(layer "Edge.Cuts")
 		(uuid "fa687908-dcf1-4e65-994c-8425c79c8356")
 	)
+	(gr_text "Lio46 keybaord by Liolaeus"
+		(at 194.03 186.44 0)
+		(layer "B.SilkS")
+		(uuid "7b59d813-ca15-4b46-aa64-d2ab98d7af59")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom mirror)
+		)
+	)
 	(segment
 		(start 246.5953 147.3667)
 		(end 254.4845 147.3667)

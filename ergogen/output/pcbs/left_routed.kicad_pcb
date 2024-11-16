@@ -5551,7 +5551,7 @@
 		)
 		(property "Value" "Lio"
 			(at 0 -7.5 0)
-			(layer "F.SilkS")
+			(layer "B.SilkS")
 			(hide yes)
 			(uuid "450178c9-46ac-446e-9a7a-ef08742df07b")
 			(effects
@@ -24058,6 +24058,19 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "fbd61f13-4f42-4291-b145-9a91c8cc3437")
+	)
+	(gr_text "Lio46 keybaord by Liolaeus"
+		(at 257.15 186.42 0)
+		(layer "B.SilkS")
+		(uuid "2496f865-f71e-42fa-ae10-dcdefd7479f8")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom mirror)
+		)
 	)
 	(segment
 		(start 247.8579 140.4254)
