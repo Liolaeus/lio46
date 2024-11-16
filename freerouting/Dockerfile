@@ -14,6 +14,7 @@ CMD java -jar /freerouting.jar \
     --gui.enabled=false \
     -da \
     -mp 25 \
+    --router.via_costs 1 \
     -us global \
     -de /freerouting/$INPUT.dsn \
     -do /freerouting/$INPUT.ses \
