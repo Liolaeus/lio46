@@ -7,7 +7,7 @@ Generated with [ergogen](https://github.com/ergogen/ergogen) and routed with the
 
 ![kicad screenshot](pictures/kicad_screen.png)
 
-# requirements
+# Requirements
 If you want to build or modify this keyboard here is the list of software dependencies to run all the scripts in this repository:
 
 - GNU make
@@ -16,7 +16,7 @@ If you want to build or modify this keyboard here is the list of software depend
 - docker
 - python3
 
-# issues / todolist
+# Issues / Todolist
 This project is not finished and still has a lot improvements to do, here is a non exhaustive list of things that could be improved:
 
 - better component labelling on the pcb
