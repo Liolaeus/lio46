@@ -16,13 +16,16 @@ The Lio46 is a wireless, 46 key keyboard with my personal best layout in mind.
 ![kicad screenshot](pictures/kicad_screen.png)
 
 # Requirements
-If you want to build or modify this keyboard here is the list of software dependencies to run all the scripts in this repository:
+If you want to modify this keyboard here is the list of software dependencies to run all the scripts in this repository:
 
 - GNU make
 - ergogen
 - kicad 8
 - docker
 - python
+
+# Parts
+If you want to build this keyboard, you can find all the parts [here](https://github.com/Liolaeus/lio46/blob/master/parts.md)
 
 # Issues / Todolist
 This project is not finished and still has a lot improvements to do, here is a non exhaustive list of things that could be improved:
@@ -53,4 +56,3 @@ A list of projects and tools that were used and/or taken inspiration from for th
 - [NostrumX keyboard](https://github.com/bennytrouser/NostrumX/tree/main)
 - [Caldera keyboard](https://github.com/christianselig/caldera-keyboard/tree/main)
 - [Avalanche keyboard](https://github.com/vlkv/avalanche/tree/master)
-
