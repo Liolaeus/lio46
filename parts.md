@@ -3,7 +3,7 @@
 | Part                                                        | Quantity | Source                                                                                                    |
 | ----------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------- |
 | PCB                                                         | 2        | Ordered from JLCPCB                                                                                       |
-| Kailh choc v1 switches                                      | 64       | https://www.aliexpress.com/item/1005005446722280.html                                                     |
+| Kailh choc v1 switches                                      | 46       | https://www.aliexpress.com/item/1005005446722280.html                                                     |
 | Kailh choc keycaps                                          | 46       | https://www.aliexpress.com/item/1005004558099208.html                                                     |
 | Kailh hotswap sockets (low profile)                         | 46       | https://www.aliexpress.com/item/1005003873653184.html                                                     |
 | Controllers (SuperMini NRF52840 or Nice!Nano)               | 2        | https://www.aliexpress.com/item/1005007040333351.html or https://nicekeyboards.com/nice-nano#find-a-store |
