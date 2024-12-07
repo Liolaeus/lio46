@@ -14,6 +14,9 @@ The Lio46 is a wireless, 46 key keyboard with my personal best layout in mind.
 - Routed with the help of [freerouting](https://github.com/freerouting/freerouting)
 
 ![kicad screenshot](pictures/kicad_screen.png)
+![Lio 46](pictures/lio.jpg)
+![Lio 46 RGB](pictures/lio_rgb.jpg)
+
 
 # Requirements
 If you want to modify this keyboard here is the list of software dependencies to run all the scripts in this repository:
