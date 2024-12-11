@@ -54,7 +54,7 @@ A list of projects and tools that were used and/or taken inspiration from for th
 - [Ergogen](https://github.com/ergogen/ergogen)
 - [Freerouting](https://github.com/freerouting/freerouting)
 - [Flatfootfox blog](https://flatfootfox.com/ergogen-part1-units-points/)
-- [Giraffasax keyboard](https://github.com/Giraffasax/SpUnLy58/tree/main)
+- [SpUnLy58 keyboard](https://github.com/Giraffasax/SpUnLy58/tree/main)
 - [Corney-island keyboard](https://github.com/ceoloide/corney-island)
 - [NostrumX keyboard](https://github.com/bennytrouser/NostrumX/tree/main)
 - [Caldera keyboard](https://github.com/christianselig/caldera-keyboard/tree/main)
