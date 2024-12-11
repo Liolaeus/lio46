@@ -1,0 +1,5 @@
+config SHIELD_LIO46_LEFT
+    def_bool $(shields_list_contains,lio46_left)
+
+config SHIELD_LIO46_RIGHT
+    def_bool $(shields_list_contains,lio46_right)

@@ -1,0 +1,8 @@
+file_format: "1"
+id: lio46
+name: Lio46
+type: shield
+url: https://github.com/Liolaeus/lio46
+features:
+  - keys
+  - studio

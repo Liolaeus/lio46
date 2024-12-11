@@ -1,0 +1,17 @@
+if SHIELD_LIO46_LEFT
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "Lio 46"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_LIO46_LEFT || SHIELD_LIO46_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
