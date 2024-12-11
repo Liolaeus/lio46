@@ -15,10 +15,10 @@ help:
 	@echo "clean-all         Clean everything"
 
 
-$(PCB_DIR)/left.kicad_pcb: ergogen/config.yaml
+$(PCB_DIR)/left.kicad_pcb: ergogen/config.yaml ergogen/footprints/*
 	@cd ergogen && ergogen . && cd ../
 
-$(PCB_DIR)/right.kicad_pcb: ergogen/config.yaml
+$(PCB_DIR)/right.kicad_pcb: ergogen/config.yaml ergogen/footprints/*
 	@cd ergogen && ergogen . && cd ../
 
 ergogen: $(PCB_DIR)/left.kicad_pcb $(PCB_DIR)/right.kicad_pcb
