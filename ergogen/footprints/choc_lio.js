@@ -20,8 +20,8 @@ module.exports = {
         keycaps: false,
         from: undefined,
         to: undefined,
-        keycap_height: 16.8,
-        keycap_width: 16.8,
+        keycap_height: 16.6,
+        keycap_width: 16.6
     },
     body: p => {
         const standard = `

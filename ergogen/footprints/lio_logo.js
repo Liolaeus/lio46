@@ -1,17 +1,12 @@
 module.exports = {
-    params: {
-        designator: 'DISP',
-        side: 'F',
-        SCK: { type: 'net', value: 'SCK' },
-        VCC: { type: 'net', value: 'VCC' },
-        GND: { type: 'net', value: 'GND' },
-        CS: { type: 'net', value: 'CS' },
-    },
-    body: p => {
-        const logo = `	(footprint "custom:lio"
+	params: {
+		designator: 'LIO',
+		side: 'F',
+	},
+	body: p => `
+		(footprint "custom:lio"
 		(layer "${p.side}.Cu")
-		(uuid "95dfdcd3-6d8c-4920-b73f-19c1c109d475")
-		(at 156.24 173.4)
+		${p.at /* parametric position */}
 		(property "Reference" "G"
 			(at -2.5 7.5 0)
 			(layer "Dwgs.User")
@@ -1618,6 +1613,4 @@ module.exports = {
 			(uuid "e765fa18-f84e-4496-9d65-bebd7cbb207c")
 		)
 	)`
-        return logo
-    }
 }
