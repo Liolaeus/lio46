@@ -118,8 +118,8 @@ points:
           shift: [-9, -9]
     standoff_hole_2:
       anchor:
-        - ref: matrix_pinky_top
-          shift: [-9, -9]
+        - ref: matrix_outer_home
+          shift: [9, 9]
     standoff_hole_3:
       anchor:
         - ref: matrix_outer_bottom
@@ -406,13 +406,15 @@ pcbs:
       rst_button:
         what: reset_switch_smd_side
         where: mirror_rst_button
+        params:
+          include_bosses: true
         adjust:
           rotate: -90
       bat_con:
         what: battery_connector_jst_ph_2
         where: mirror_bat_con
         adjust:
-          rotate: 90
+          rotate: 180
       mounting_holes:
         what: mounting_hole_plated
         where: /^mirror_mounting_hole_.*/
