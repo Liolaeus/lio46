@@ -19,13 +19,13 @@ points:
           - switch
       rows:
         bonus:
-          row_net: P024
+          row_net: P104
         bottom:
-          row_net: P022
+          row_net: P011
         home:
-          row_net: P020
+          row_net: P100
         top:
-          row_net: P017
+          row_net: P024
       columns:
         outer:
           rows:
@@ -63,7 +63,7 @@ points:
     thumbfan:
       rows:
         thumb:
-          row_net: P024
+          row_net: P104
       anchor:
         ref: matrix_inner_bottom
         shift: [-36, -18]
@@ -94,7 +94,7 @@ points:
     nice_view:
       anchor:
         - ref: controller
-          shift: [0, -1]
+          shift: [0, -19]
     pwr_sw:
       anchor:
         - ref: controller
@@ -137,11 +137,11 @@ points:
     mounting_hole_6:
       anchor:
         - ref: nice_view
-          shift: [-7, -37]
+          shift: [-7, -18]
     mounting_hole_7:
       anchor:
         - ref: nice_view
-          shift: [7, -43]
+          shift: [7, -25]
 
   mirror:
     ref: matrix_inner_home
@@ -305,12 +305,14 @@ pcbs:
         adjust:
           rotate: -90
       nice_view:
-        what: display_nice_view
+        what: niceview
         where: nice_view
+        adjust:
+          rotate: 90
         params:
-          CS: P011
-          SCK: P104
-          MOSI: P106
+          CS: P022
+          SCK: P020
+          MOSI: P017
       pwr_sw:
         what: power_switch_smd_side
         where: pwr_sw
@@ -392,12 +394,14 @@ pcbs:
         adjust:
           rotate: 90
       nice_view:
-        what: display_nice_view
+        what: niceview
         where: mirror_nice_view
+        adjust:
+          rotate: -90
         params:
-          CS: P011
-          SCK: P104
-          MOSI: P106
+          CS: P022
+          SCK: P020
+          MOSI: P017
       pwr_sw:
         what: power_switch_smd_side
         where: mirror_pwr_sw
