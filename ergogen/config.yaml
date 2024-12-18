@@ -102,7 +102,7 @@ points:
     rst_button:
       anchor:
         - ref: controller
-          shift: [7.5, -35]
+          shift: [7.4, -35]
     bat_con:
       anchor:
         - ref: controller

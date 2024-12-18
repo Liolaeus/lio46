@@ -1818,7 +1818,7 @@
 
   (footprint "ceoloide:reset_switch_smd_side"
     (layer "F.Cu")
-    (at 286.3 169.3 -90)
+    (at 286.2 169.3 -90)
     (property "Reference" "RST1"
       (at 0 0 -90)
       (layer "F.SilkS")
