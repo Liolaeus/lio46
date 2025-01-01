@@ -257,12 +257,12 @@ points:
 
   mirror:
     ref: matrix_inner_home
-    distance: -100
+    distance: 100
 
 outlines:
   cutouts:
     - what: rectangle
-      where: switch
+      where: /matrix|thumbfan/
       bound: false
       size: cos
   keycaps:
@@ -366,6 +366,111 @@ outlines:
           shift: [-0.5kcs, -0.6kcs]
         - ref: mirror_thumbfan_inner_thumb
           shift: [-0.6kcs, -0.6kcs]
+  plate_left:
+    - what: polygon
+      operation: stack
+      fillet: 1.5
+      points:
+        - ref: matrix_ring_bonus
+          shift: [0, -0.6kcs]
+        - ref: matrix_outer_bottom
+          shift: [-0.6kcs, -0.6kcs]
+        - ref: matrix_outer_top
+          shift: [-0.6kcs, 0.6kcs]
+        - ref: matrix_outer_top
+          shift: [8, 0.6kcs]
+        - ref: matrix_pinky_top
+          shift: [-10, 0.6kcs]
+        - ref: matrix_pinky_top
+          shift: [8, 0.6kcs]
+        - ref: matrix_ring_top
+          shift: [-10, 0.6kcs]
+        - ref: matrix_ring_top
+          shift: [8, 0.6kcs]
+        - ref: matrix_middle_top
+          shift: [-10, 0.6kcs]
+        - ref: matrix_middle_top
+          shift: [10, 0.6kcs]
+        - ref: matrix_index_top
+          shift: [-8, 0.6kcs]
+        - ref: matrix_index_top
+          shift: [10, 0.6kcs]
+        - ref: matrix_inner_top
+          shift: [-8, 0.6kcs]
+        - ref: matrix_inner_top
+          shift: [0.5kcs, 0.6kcs]
+        - ref: matrix_inner_top
+          shift: [0.5kcs, -2.85kcs]
+        - ref: thumbfan_home_thumb
+          shift: [0.5kcs, 0.5kcs]
+        - ref: thumbfan_outer_thumb
+          shift: [-0.5kcs, 0.5kcs]
+        - ref: thumbfan_outer_thumb
+          shift: [0.6kcs, 0.5kcs]
+        - ref: thumbfan_outer_thumb
+          shift: [0.6kcs, -0.6kcs]
+        - ref: thumbfan_home_thumb
+          shift: [0.5kcs, -0.6kcs]
+        - ref: thumbfan_home_thumb
+          shift: [-0.5kcs, -0.6kcs]
+        - ref: thumbfan_inner_thumb
+          shift: [-0.5kcs, -0.6kcs]
+  plate_right:
+      - what: polygon
+        operation: stack
+        fillet: 1.5
+        points:
+          - ref: mirror_matrix_ring_bonus
+            shift: [0, -0.6kcs]
+          - ref: mirror_matrix_outer_bottom
+            shift: [-0.6kcs, -0.6kcs]
+          - ref: mirror_matrix_outer_top
+            shift: [-0.6kcs, 0.6kcs]
+          - ref: mirror_matrix_outer_top
+            shift: [8, 0.6kcs]
+          - ref: mirror_matrix_pinky_top
+            shift: [-10, 0.6kcs]
+          - ref: mirror_matrix_pinky_top
+            shift: [8, 0.6kcs]
+          - ref: mirror_matrix_ring_top
+            shift: [-10, 0.6kcs]
+          - ref: mirror_matrix_ring_top
+            shift: [8, 0.6kcs]
+          - ref: mirror_matrix_middle_top
+            shift: [-10, 0.6kcs]
+          - ref: mirror_matrix_middle_top
+            shift: [10, 0.6kcs]
+          - ref: mirror_matrix_index_top
+            shift: [-8, 0.6kcs]
+          - ref: mirror_matrix_index_top
+            shift: [10, 0.6kcs]
+          - ref: mirror_matrix_inner_top
+            shift: [-8, 0.6kcs]
+          - ref: mirror_matrix_inner_top
+            shift: [0.5kcs, 0.6kcs]
+          - ref: mirror_matrix_inner_top
+            shift: [0.5kcs, -2.85kcs]
+          - ref: mirror_thumbfan_home_thumb
+            shift: [0.5kcs, 0.5kcs]
+          - ref: mirror_thumbfan_outer_thumb
+            shift: [-0.5kcs, 0.5kcs]
+          - ref: mirror_thumbfan_outer_thumb
+            shift: [0.6kcs, 0.5kcs]
+          - ref: mirror_thumbfan_outer_thumb
+            shift: [0.6kcs, -0.6kcs]
+          - ref: mirror_thumbfan_home_thumb
+            shift: [0.5kcs, -0.6kcs]
+          - ref: mirror_thumbfan_home_thumb
+            shift: [-0.5kcs, -0.6kcs]
+          - ref: mirror_thumbfan_inner_thumb
+            shift: [-0.5kcs, -0.6kcs]
+
+  switch_plate:
+    - name: plate_left
+    - name: plate_right
+      operation: stack
+    - name: cutouts
+      operation: subtract
   combo:
     - operation: stack
       name: pcb_left
@@ -573,3 +678,8 @@ pcbs:
           side: "B"
         what: lio_logo
         where: logo
+
+cases:
+  plate:
+  - name: switch_plate
+    extrude: 1.2
