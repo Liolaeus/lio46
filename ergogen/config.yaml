@@ -144,18 +144,18 @@ points:
           shift: [7, -25]
 
   mirror:
-    ref: matrix_inner_home
-    distance: -100
+    ref: thumbfan_outer_thumb
+    distance: 40
 
 outlines:
   cutouts:
     - what: rectangle
-      where: switch
+      where: /matrix|thumbfan/
       bound: false
       size: cos
   keycaps:
     - what: rectangle
-      where: switch
+      where: /matrix|thumbfan/
       bound: false
       size: kcs
   controller:
@@ -254,6 +254,62 @@ outlines:
           shift: [border_offset + 0.525, -border_offset]
         - ref: mirror_thumbfan_inner_thumb
           shift: [-border_offset, -border_offset]
+  standoff_holes:
+    - what: circle
+      radius: 1
+      operation: stack
+      where: /standoff_hole*/
+  mounting_holes:
+    - what: circle
+      radius: 1.5
+      operation: stack
+      where: /mounting_hole*/
+  switch_plate:
+    - what: polygon
+      operation: stack
+      fillet: 0.7
+      points:
+          # bottom left corner
+        - ref: matrix_outer_bottom
+          shift: [-(border_offset + 1.35), -border_offset]
+        - ref: matrix_outer_top
+          shift: [-(border_offset + 1.35), border_offset]
+        - ref: matrix_outer_top
+          shift: [border_offset + 1.4, border_offset]
+        - ref: matrix_pinky_top
+          shift: [-border_offset, border_offset]
+        - ref: matrix_pinky_top
+          shift: [border_offset + 1.4, border_offset]
+        - ref: matrix_ring_top
+          shift: [-border_offset, border_offset]
+        - ref: matrix_ring_top
+          shift: [border_offset + 1.4, border_offset]
+        - ref: matrix_middle_top
+          shift: [-border_offset, border_offset]
+        - ref: matrix_middle_top
+          shift: [border_offset, border_offset]
+        - ref: matrix_index_top
+          shift: [-(border_offset + 1.4), border_offset]
+        - ref: matrix_index_top
+          shift: [border_offset, border_offset]
+        - ref: matrix_inner_top
+          shift: [-(border_offset + 1.4), border_offset]
+          # top right corner
+        - ref: matrix_inner_top
+          shift: [border_offset + 19.8, border_offset]
+        - ref: matrix_inner_top
+          shift: [border_offset + 19.8, -3kcs]
+        - ref: thumbfan_outer_thumb
+          shift: [border_offset, border_offset]
+          # bottom right corner
+        - ref: thumbfan_outer_thumb
+          shift: [border_offset, -border_offset]
+        - ref: thumbfan_home_thumb
+          shift: [border_offset + 0.525, -border_offset]
+        - ref: thumbfan_close_thumb
+          shift: [border_offset + 0.525, -border_offset]
+        - ref: thumbfan_inner_thumb
+          shift: [-border_offset, -border_offset]
   combo:
     - operation: stack
       name: pcb_left
@@ -263,6 +319,20 @@ outlines:
       name: keycaps
     - operation: stack
       name: controller
+    - operation: stack
+      name: switch_plate
+
+  case:
+    - name: switch_plate
+      operation: stack
+    - name: standoff_holes
+      operation: subtract
+    - name: mounting_holes
+      operation: subtract
+    - name: cutouts
+      operation: subtract
+
+
 
 pcbs:
   left:
