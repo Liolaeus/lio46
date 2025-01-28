@@ -14,7 +14,7 @@ Lio46 is a wireless, 46 key keyboard with my personal best layout in mind.
 ![Lio 46 top](pictures/lio3.jpg)
 ![Lio 46 side](pictures/lio4.jpg)
 
-more pitures [here](https://github.com/Liolaeus/lio46/tree/master/pictures) !
+more pictures [here](https://github.com/Liolaeus/lio46/tree/master/pictures) !
 
 # V2 Changelog
 - Removed underglow and backlight leds for better battery life
